@@ -10,13 +10,13 @@ body {
 }
 
 a {
-  color: var(--color-accent-700);
+  color: var(--color-accent);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 45%, var(--color-divider));
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-700);
   border-bottom-color: var(--color-accent);
 }
 
@@ -27,7 +27,9 @@ a:focus-visible {
 
 .site-shell {
   --tile-min: 320px;
-  background: var(--color-bg);
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent-100) 42%, transparent) 0, transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-accent-100) 24%, var(--color-bg)) 0%, var(--color-bg) 18%);
   color: var(--color-text);
   min-height: 100vh;
 }
@@ -47,10 +49,10 @@ a:focus-visible {
   gap: 24px;
   flex-wrap: wrap;
   padding: 22px clamp(20px, 6vw, 88px);
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
   position: sticky;
   top: 0;
-  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  background: color-mix(in srgb, var(--color-bg) 84%, var(--color-accent-100));
   backdrop-filter: blur(6px);
   z-index: 20;
 }
@@ -84,7 +86,7 @@ a:focus-visible {
 }
 
 .site-nav a:last-child {
-  color: var(--color-accent-700);
+  color: var(--color-accent);
 }
 
 .hero {
@@ -93,7 +95,7 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 72px);
   align-items: end;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
 }
 
 .hero-kicker,
@@ -106,10 +108,10 @@ a:focus-visible {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: var(--color-accent);
 }
 
 .hero-kicker {
-  color: var(--color-accent-700);
   font-variant-numeric: tabular-nums;
   margin-bottom: 26px;
 }
@@ -151,6 +153,7 @@ a:focus-visible {
 }
 
 .btn-primary {
+  color: var(--color-accent-700);
   border-bottom: 1px solid var(--color-accent);
 }
 
@@ -174,7 +177,7 @@ a:focus-visible {
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-text) 58%, transparent);
+  color: color-mix(in srgb, var(--color-accent-700) 58%, var(--color-text));
 }
 
 .client-row {
@@ -187,7 +190,6 @@ a:focus-visible {
 }
 
 .client-label {
-  color: var(--color-accent-700);
   margin-right: 8px;
 }
 
@@ -210,14 +212,14 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: clamp(32px, 6vw, 80px);
   align-items: start;
-  border-top: 1px solid var(--color-divider);
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
   margin-top: clamp(40px, 6vw, 72px);
 }
 
 .section--contact {
   padding: clamp(56px, 8vw, 108px) clamp(20px, 6vw, 88px) clamp(64px, 8vw, 112px);
-  border-top: 1px solid var(--color-divider);
-  background: color-mix(in srgb, var(--color-surface) 55%, var(--color-bg));
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent-100) 42%, var(--color-surface)) 0%, color-mix(in srgb, var(--color-surface) 70%, var(--color-bg)) 100%);
 }
 
 .section-head {
@@ -226,7 +228,7 @@ a:focus-visible {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
   padding-bottom: 18px;
 }
 
@@ -239,7 +241,6 @@ a:focus-visible {
 
 .section-meta {
   font-variant-numeric: tabular-nums;
-  color: color-mix(in srgb, var(--color-text) 58%, transparent);
 }
 
 .work-grid {
@@ -254,12 +255,13 @@ a:focus-visible {
 }
 
 .work-frame {
-  border: 6px solid var(--color-surface);
-  outline: 1px solid var(--color-divider);
-  background: #f6f3ec;
+  border: 6px solid color-mix(in srgb, var(--color-accent-100) 62%, var(--color-surface));
+  outline: 1px solid color-mix(in srgb, var(--color-accent-300) 48%, var(--color-divider));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent-100) 55%, #fff) 0%, #f6f3ec 100%);
   overflow: hidden;
   display: grid;
   place-items: center;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 14%, transparent);
 }
 
 .work-frame img {
@@ -274,7 +276,7 @@ a:focus-visible {
 }
 
 .work-frame--dark {
-  background: #111111;
+  background: linear-gradient(180deg, #1f1409 0%, #111111 100%);
 }
 
 .work-frame--ratio-4x3 {
@@ -312,13 +314,14 @@ a:focus-visible {
 .work-kicker,
 .service-kicker,
 .contact-label {
-  color: var(--color-accent-700);
+  color: var(--color-accent);
 }
 
 .work-title {
   font-family: var(--font-heading);
   font-size: 23px;
   margin-top: 4px;
+  color: color-mix(in srgb, var(--color-text) 88%, var(--color-accent-700));
 }
 
 .work-text {
@@ -372,9 +375,9 @@ a:focus-visible {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent-700);
+  color: var(--color-accent);
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
 }
 
 .tag-list {
@@ -388,10 +391,12 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   padding: 8px 12px;
-  border: 1px solid var(--color-divider);
+  border: 1px solid color-mix(in srgb, var(--color-accent-300) 55%, var(--color-divider));
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 0.03em;
+  color: var(--color-accent-700);
+  background: color-mix(in srgb, var(--color-accent-100) 55%, transparent);
 }
 
 .sector-list {
@@ -432,7 +437,6 @@ a:focus-visible {
 }
 
 .contact-label {
-  color: color-mix(in srgb, var(--color-text) 58%, transparent);
   margin-bottom: 8px;
 }
 
@@ -448,7 +452,7 @@ a:focus-visible {
 
 .footer {
   padding: 26px clamp(20px, 6vw, 88px);
-  border-top: 1px solid var(--color-divider);
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-300) 45%, var(--color-divider));
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -456,7 +460,7 @@ a:focus-visible {
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  color: color-mix(in srgb, var(--color-accent-700) 50%, var(--color-text));
 }
 
 .footer-note {
